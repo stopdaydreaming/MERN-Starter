@@ -73,3 +73,4 @@ app.use(express.static("client/build"));
 ```
 5. Add a wildcard route to serve up the client index.html
 6. `git push heroku main`
+7. Add MONGODB_URI env var in Heroku settings
