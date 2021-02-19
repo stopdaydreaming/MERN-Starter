@@ -43,8 +43,6 @@ javascript
 "start:prod": "node server.js",
 "start:dev": "concurrently \"nodemon -- ignore 'client/*'\" \"npm run client\",
 "client": "cd client && npm run start"
-
-
 ```
 3. `npm install if-env`
 4. `npm install concurrently nodemon -D`
@@ -64,7 +62,6 @@ javascript
 "install": "cd client && npm install",
 "build": "cd client || npm run build",
 "heroku-postbuild": "npm run build"
-
 ```
 4. Add express static to serve up the build folder
 ```
