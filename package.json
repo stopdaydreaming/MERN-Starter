@@ -1,0 +1,25 @@
+{
+  "name": "MERN-Starter",
+  "version": "1.0.0",
+  "description": "## Basic Setup 1. touch server.js 2. `npm init -y` 3. `npm install express mongoose`",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stopdaydreaming/MERN-Starter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stopdaydreaming/MERN-Starter/issues"
+  },
+  "homepage": "https://github.com/stopdaydreaming/MERN-Starter#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.11.17"
+  }
+}

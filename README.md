@@ -32,4 +32,44 @@ javascript
     useCreateIndex: true
 }
 ```
-4. Add promise .then and .catch for Mongoose connection
+4. Add promise .then and .catch for Mongoose connection 
+
+## Add React to the App
+1. `npx create-react-app client` always name client inside of MERN
+2.  Add scripts in server package.json
+```
+javascript
+"start": "if-en NODE_ENV=production && npm run start:prod || npm run start:dev",
+"start:prod": "node server.js",
+"start:dev": "concurrently \"nodemon -- ignore 'client/*'\" \"npm run client\",
+"client": "cd client && npm run start"
+
+
+```
+3. `npm install if-env`
+4. `npm install concurrently nodemon -D`
+5. run `npm start` at the root starts both servers
+6. In the client package.json add a proxy:
+```
+javascript
+"proxy": "http://localhost:3001",
+```
+
+## Deploy to Heroku
+1. `git add .` -> `git commit -m`
+2. `heroku create`
+3. Add three more scripts to server package.json
+```
+javascript
+"install": "cd client && npm install",
+"build": "cd client || npm run build",
+"heroku-postbuild": "npm run build"
+
+```
+4. Add express static to serve up the build folder
+```
+javascript
+app.use(express.static("client/build"));
+```
+5. Add a wildcard route to serve up the client index.html
+6. `git push heroku main`
