@@ -1,7 +1,7 @@
 # MERN-Starter
 
 ## Basic Setup
-1. touch server.js
+1. `touch server.js`
 2. `npm init -y`
 3. `npm install express mongoose`
 
@@ -11,9 +11,9 @@
 3. Set the server PORT to 3001
 4. Listen to the PORT
 5. Add middleware
-```javascript
-app.use(express.urlencoded({ extended: true}));
-app.use(express.json());
+```
+    app.use(express.urlencoded({ extended: true}));
+    app.use(express.json());
 ```
 6. Add routes
 
@@ -24,7 +24,6 @@ app.use(express.json());
 2. Setup the mongoose connection
 3. Add mongoose config object to the .connect method
 ```
-javascript
 {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -35,10 +34,9 @@ javascript
 4. Add promise .then and .catch for Mongoose connection 
 
 ## Add React to the App
-1. `npx create-react-app client` always name client inside of MERN
+1. `npx create-react-app client` (always name client inside of MERN)
 2.  Add scripts in server package.json
 ```
-javascript
 "start": "if-en NODE_ENV=production && npm run start:prod || npm run start:dev",
 "start:prod": "node server.js",
 "start:dev": "concurrently \"nodemon -- ignore 'client/*'\" \"npm run client\",
@@ -49,8 +47,7 @@ javascript
 5. run `npm start` at the root starts both servers
 6. In the client package.json add a proxy:
 ```
-javascript
-"proxy": "http://localhost:3001",
+    "proxy": "http://localhost:3001",
 ```
 
 ## Deploy to Heroku
@@ -58,15 +55,13 @@ javascript
 2. `heroku create`
 3. Add three more scripts to server package.json
 ```
-javascript
-"install": "cd client && npm install",
-"build": "cd client || npm run build",
-"heroku-postbuild": "npm run build"
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
 ```
 4. Add express static to serve up the build folder
 ```
-javascript
-app.use(express.static("client/build"));
+    app.use(express.static("client/build"));
 ```
 5. Add a wildcard route to serve up the client index.html
 6. `git push heroku main`
