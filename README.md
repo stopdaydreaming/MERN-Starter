@@ -37,7 +37,7 @@
 1. `npx create-react-app client` (always name client inside of MERN)
 2.  Add scripts in server package.json
 ```
-"start": "if-en NODE_ENV=production && npm run start:prod || npm run start:dev",
+"start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
 "start:prod": "node server.js",
 "start:dev": "concurrently \"nodemon -- ignore 'client/*'\" \"npm run client\",
 "client": "cd client && npm run start"
